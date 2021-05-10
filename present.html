@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ALT 2 by Matt B</title>
+
+<style>
+body {background-color: #04435c;}
+h1 {
+  color: white;
+  font-family: verdana;
+  font-size: 300%;
+}
+p {
+  color: white;
+  font-family: verdana;
+  font-size: 160%;
+}
+
+.box {
+  background-color: #feb028;
+  color: white;
+  border: 10px solid #feb028;
+  margin: 20px;
+  padding: 20px;
+}
+.pinkl {
+  background-color: #fe5a73;
+  color: white;
+  border: 2px solid #fe5a73;
+  margin: 20px;
+  padding: 20px;
+}
+.pinkd {
+  background-color: #ff2555;
+  color: white;
+  border: 2px solid #ff2555;
+  margin: 20px;
+  padding: 20px;
+}
+.yellowl {
+  background-color: #ffcc5f;
+  color: black;
+  border: 2px solid #ffcc5f;
+  margin: 20px;
+  padding: 20px;
+}
+.yellowd {
+  background-color: #feb028;
+  color: white;
+  border: 2px solid #feb028;
+  margin: 20px;
+  padding: 20px;
+}
+.bluel {
+  background-color: #3296b8;
+  color: white;
+  border: 2px solid #3296b8;
+  margin: 20px;
+  padding: 20px;
+}
+.blued {
+  background-color: #007398;
+  color: white;
+  border: 2px solid #007398;
+  margin: 20px;
+  padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>The Ratings of Movies based on Runtime</h1>
+<div class="box">
+<p><b>Movies in List</b>: 1000</p>
+<p><b>Total Movies over 2 Hours: </b>494</p>
+<p><b>Total Movies under 2 Hours: </b>506</p>
+<img src="https://i.imgur.com/kJdyv3i.png">
+</div>
+
+<div class="pinkl">
+<p ><b>Above 2 Hours Mode: </b>7.8</p>
+<p ><b>Below 2 Hours Mode: </b>7.7</p>
+</div>
+<div class="pinkd">
+<p ><b>Above 2 Hours Mean: </b>8.0</p>
+<p ><b>Below 2 Hours Mean: </b>7.9</p>
+</div>
+<div class="yellowl">
+<p ><b>Above 2 Hours Median: </b>8.0</p>
+<p ><b>Below 2 Hours Median: </b>7.9</p>
+</div>
+<div class="yellowd">
+<p><b>Above 2 Hours Minimum: </b>7.6</p>
+<p><b>Below 2 Hours Minimum: </b>7.6</p>
+</div>
+<div class="bluel">
+<p><b>Above 2 Hours Maximum: </b>9.3</p>
+<p><b>Below 2 Hours Maximum: </b>9.0</p>
+</div>
+<img src="https://i.imgur.com/ze1sVnD.png">
+</div>
+
+<div class="blued">
+<p><b>Topic Chosen: </b>Movie Ratings</p>
+<p><b>Data Source: </b><a href="https://www.kaggle.com/harshitshankhdhar/imdb-dataset-of-top-1000-movies-and-tv-shows">Kaggle</a></p>
+<p><b>Hypothesis: </b>Movies that are longer than 2 hours are rated higher. </p>
+</div>
+
+<div class="pinkl">
+<p><b>Describe the data source: </b>The data source is from Kaggle, though it was originally sourced from iMBD's top 1000 list of movies based on rating</p>
+<p> <b>What file format is it in?: </b>It is in the CSV format</p>
+<p><b>Where did you get the data from?: </b>Kaggle </p>
+<p><b>Where did you store the data: </b>The Data is stored in a folder with my code.</p>
+</div>
+
+<div class="pinkd">
+<p style="color:white;"><b>Outline Methods and Functions Used to Clean and Transform Raw Data: </b>I used a list.remove() function to remove any negative numbers from the list. I sorted the list using list.sort() in order to make the list clearer and more readable. </p>
+</div>
+
+<div class="yellowl">
+<p><b>Describe Algorithms You Used and Why: </b>At the beginning of my program, I used an algorith in order to open up the .csv file that is filled with the information on movie runtimes and ratings. After the file was opened the runtime and rating columns were divided into two lists with an equal amount of items inside them that correspond to their respective runtime/rating. These lists are into different parts line after line. The first item in each list is removed as it is a string and not a float. In order to see how many movies that are above and below 2 hours on the top 1000 list I used an algorith that goes through the runtime list using a for loop to detect if an item is 120 >= or < 120, it then adds 1 to its respective variable labelled above and bellow. To figure out the mean of the movies above and below 2 hours I used a for loop (for item in rating) that went through the list of runtimes and ratings checking if the runtime is over 120, after doing so the corresponding rating would then be added to the total ratings of above and below and would later be divided by the total amount of movies above and below 2 hours to get the mean. The mean algorithm doubled as the beginning of the mode algorithm, as the for loops goes through each item, it adds that rating to a list of ratings for above and below 120 minutes. The mode is then picked out of the AboveMode and BelowMode lists using the statistics.mode() function. Finding the median meant I had to use an algorithm that takes the length of the above and below lists and seeing if they are divisble by 2; if they are the code gets the middle 2 items and getting the average of those numbers, otherwise the algorithm will get the middle item by divding the total number of items in the list then dividing it by 2 finding the middle number.</p>
+</div>
+
+<div class="yellowd">
+
+<p>Mean:      ✔ </p>
+<p>Mode:      ✔ </p>
+<p>Median:    ✔ </p>
+<p>Max:       ✔ </p>
+<p>Min:       ✔ </p>
+<p>Frequency: ✔ </p>
+</div>
+
+<div class="bluel">
+<p><b>Describe the Graphical Output Type and Why: </b>I chose to use a pie chart to display the totals for both above and below, demonstrating how similar they are. On the other hand I chose to use a number of double bar charts to display the averages, minimums and maximums as I felt this was the best way for someone to compare the 2.</b> </p>
+</div class>
+
+<div class="blued">
+<p><b>What Have You Learned from the Data: </b>I have learned that the runtime of a movie has very little to do with its rating, this is made clear as the averages only diifer between 0.1 - 0.3. Althought the movies that are over 2 hours long tend to have higher averages there is also less of them on the list. </p>
+<p><b>How Does it Compare with your Hypothesis:</b>: My hypothesis was slightly incorrect. Although movies with runtimes over 2 hours tended to have higher ratings, the averages show that it in not a mjor factor in the rating of a movie as there are less movies with runtimes over 2 hours on the top 1000 list. </p>
+<p><b>What Future Predictions or Decisions Will It Affect: </b>This data shows that it is more likley for a movie with a runtime over 2 hours to have a high rating compared to a movie that is less than 2 hours. </p>
+<p><b>What are the Societal Impacts of your Chosen Design? Discuss: </b>The societal impacts of this data is that it is important to consider runtime as a feature during the production of a movie. Although the difference is slim between the averages, the top ranking movie is over 2 hours and has a 0.3 higher rating than the top rated movie under 2 hours. Those 0.3 scores are important in such a competitive market. This result is most likley a result of the fact that there is more content in a movie with a higher runtime.</p>
+</div class>
+
+</body>
+</html>
